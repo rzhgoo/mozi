@@ -1,0 +1,21 @@
+import gymnasium as gym
+
+gym.register(
+  id="ms_lab-Tracking-Flat-Unitree-G1",
+  entry_point="ms_lab.envs:ManagerBasedRlEnv",
+  disable_env_checker=True,
+  kwargs={
+    "env_cfg_entry_point": f"{__name__}.flat_env_cfg:G1FlatEnvCfg",
+    "rl_cfg_entry_point": f"{__name__}.rl_cfg:G1FlatPPORunnerCfg",
+  },
+)
+
+gym.register(
+  id="ms_lab-Tracking-Flat-Unitree-G1-Play",
+  entry_point="ms_lab.envs:ManagerBasedRlEnv",
+  disable_env_checker=True,
+  kwargs={
+    "env_cfg_entry_point": f"{__name__}.flat_env_cfg:G1FlatEnvCfg_PLAY",
+    "rl_cfg_entry_point": f"{__name__}.rl_cfg:G1FlatPPORunnerCfg",
+  },
+)
